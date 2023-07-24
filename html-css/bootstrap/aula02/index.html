@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="sitecompleto.css">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Logo ou nome do site -->
+        <a class="navbar-brand" href="#">Meu Site</a>
+  
+        <!-- Botão de menu responsivo -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Menu de navegação -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contato</a>
+            </li>
+            <!-- Exemplo de menu dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                <li><a class="dropdown-item" href="#">Opção 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Outra opção</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Treinamentos em São Paulo</h1>
+        <p class="lead">Os melhores cursos da Cidade.</p>
+        <p class="lead"><strong>Domine o essencial em informática.</strong></p>
+      </div>
+    </div>
+  
+    <!-- Cards -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Card 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 1</h5>
+                        <p class="card-text">Este é o conteúdo do Card 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Card 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 2</h5>
+                        <p class="card-text">Este é o conteúdo do Card 2.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Imagem do Card 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Card 3</h5>
+                        <p class="card-text">Este é o conteúdo do Card 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="container mt-4">
+        <h2>Formulário de Contato</h2>
+        <form>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <div class="controletamanho">
+        <!-- Carrossel -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores do Carrossel -->
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            </ol>
+
+            <!-- Slides do Carrossel -->
+<div class="container d-flex justify-content-center align-items-center">
+            <div class="carousel-inner" style="max-width: 900px;" justify-content-center>
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400?text=Slide%201" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400?text=Slide%202" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400?text=Slide%203" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Controles do Carrossel -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <p>direitos reservados</p>
+  
+    
+    <script src="js/bootstrap.js"></script> 
+</body>
+</html>

@@ -1,0 +1,19 @@
+.container {
+    background-color: blueviolet;
+    color: bisque;
+}
+
+.container-fluid {
+    background-color: cadetblue;
+    color: bisque;
+}
+
+.jumbotron {
+    padding: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+    width: 50%;
+    background-color: aquamarine;
+
+}

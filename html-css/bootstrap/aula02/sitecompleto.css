@@ -1,0 +1,12 @@
+
+.jumbotron{
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto 40px auto;
+    }
+
+    .jumbotron > .container {
+        padding: 10px;
+        margin-left: 5px;
+    }

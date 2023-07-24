@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --preto: #191716;
+    --amarelo: #E6AF2E;
+    --gelo: #E0E2DB;
+    --azul: #3D348B;
+    --bege: #BEB7A4;
+}
+
+header {
+    height: 10vh;
+    background-color: var(--bege);
+}
+.navbar {
+    padding: 0;
+}
+.container-fluid {
+    background-color: var(--amarelo);
+    padding: 10px;
+    color: var(--azul);
+    font-weight: bold;
+}
+body {
+    background-color: var(--azul);
+}
+main {
+    width: 80vw;
+    margin: auto;
+    background-color: var(--amarelo);
+}
+
+.cartoes {
+    margin: 0px 20px 20px 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.formulario {
+    width: 50%;
+    margin: auto auto 20px auto;
+    color: var(--preto);
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: var(--azul);
+}
+.card {
+    box-shadow: 2px 2px 2px black;
+}

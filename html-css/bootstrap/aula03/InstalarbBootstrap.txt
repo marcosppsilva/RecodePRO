@@ -1,0 +1,7 @@
+Abrir terminarl dentro da pasta do projeto
+
+em seguida colocar "npm init -y"
+
+depois "npm i bootstrap"
+
+instalar a extenção sass live caso não tenha no seu visualstudiocode
