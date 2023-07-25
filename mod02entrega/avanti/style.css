@@ -8,8 +8,26 @@
 .cabecalho {
     display: flex;
     justify-content: space-between;
+    background-color: #007BFF;
+    color: white;
 }
 .links {
     display: flex;
     gap: 30px;
+}
+
+
+.zeroum{
+    background-color: #007BFF;
+}
+
+.zerodois {
+    background-color: #00CC99;
+}
+.zerotres {
+    background-color: #FFD700;
+}
+
+.zeroquatro {
+    background-color: #A9A9A9;
 }
