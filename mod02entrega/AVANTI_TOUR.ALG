@@ -72,13 +72,22 @@ Inicio
          fimpara
 
          para l de 1 ate 5 faca
-         para c de 1 ate 2 faca
-               se (viagem[l,c] <> " ") entao
-               viagem[l] <- destinoqueviaja
-               viagem[c] <- clientequeviaja
-               fimse
+              para c de 1 ate 2 faca
+              se viagem[l, c] = "" entao
+                   viagem[l, c] <- clientequeviaja
+                   viagem[l, c + 1] <- destinoqueviaja
+              fimse
+              fimpara
          fimpara
-         fimpara
+
+         //para l de 1 ate 5 faca
+         //para c de 1 ate 2 faca
+               //se (viagem[l,c] <> " ") entao
+               //viagem[l] <- destinoqueviaja
+             //  viagem[c] <- clientequeviaja
+           //    fimse
+         //fimpara
+         //fimpara
       caso 4
          //Aqui os clientes são consultados
          para c de 1 ate 5 faca
@@ -91,6 +100,7 @@ Inicio
          fimpara
       caso 6
          //Aqui as viagens são consultadas ***Ainda não funciona***
+         escreval ("Destino","   ","Cliente")
          para l de 1 ate 5 faca
             //escreva (l,"° Viagem: ")
             para c de 1 ate 2 faca
