@@ -1,4 +1,4 @@
-Algoritmo "Avanti Tour"
+Algoritmo "Avanti Turismo"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Flávio
 // Descrição   : Programa para gerenciar cadastro de clientes e trajetos
@@ -21,7 +21,7 @@ Inicio
    repita
 
       escreval("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
-      escreval("            AVANTI TOUR")
+      escreval("            AVANTI TURISMO")
       escreval("           SEJA BEM VINDO!")
       escreval("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-")
       escreval("           Escolha uma Opção")
