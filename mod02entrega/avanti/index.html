@@ -1,72 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>AvantiTour Página Inicial</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>AvantiTour Página Inicial</title>
 </head>
+
 <body>
- <header class="container-fluid cabecalho p-3">
+  <header class="container-fluid cabecalho p-3">
     <div class="logo">Logo Empresa</div>
     <nav class="navbar p-3 align-content-center">
-        <ul class="links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Destinos</a></li>
-            <li><a href="#">Pacotes</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+      <ul class="links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinos</a></li>
+        <li><a href="#">Pacotes</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
     </nav>
- </header>
+  </header>
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imgs/cruzeiro350h.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imgs/cruzeiro350h.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imgs/cruzeiro350h.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <main class="container-fluid p-3 w-75">
 
- <main class="container-fluid">
-    <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="imgs/testep1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="imgs/teste02.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-<div class="container-fluid zeroum">Div 1</div>
-<div class="container-fluid zerodois">Div 2</div>
-<div class="container-fluid zerotres">Div 3</div>
-<div class="container-fluid zeroquatro">Div 4</div>
-<div class="container-fluid zerocinco">Div 5</div>
- </main>
-    <footer>h1 teste</footer>
+    <div class="container-fluid row justify-content-between align-content-between">
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/cruzeiro01.png" class="card-img-top" alt="cruzeiro Caribe">
+        <div class="card-body">
+          <h5 class="card-title">Cruzeiro no Caribe</h5>
+          <p class="card-text">Que tal passar 6 dias e 5 noites em um dos cruzeiros mais luxuosos do mundo? Pronto(a) para essa experiência inesquecível?</p>
+          <a href="#" class="btn btn-primary">A partir de R$2700,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destroma.png" class="card-img-top" alt="Roma">
+        <div class="card-body">
+          <h5 class="card-title">Roma, Itália</h5>
+          <p class="card-text">Viaje no tempo pela História Antiga em Roma. Maravilhe-se com o Coliseu, a Fontana di Trevi e a grandiosidade do Império Romano.</p>
+          <a href="#" class="btn btn-primary">A partir de R$4000,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destmaldivas.png" class="card-img-top" alt="maldivas">
+        <div class="card-body">
+          <h5 class="card-title">Ilhas Maldivas</h5>
+          <p class="card-text">Relaxe em praias paradisíacas e águas cristalinas nas Ilhas Maldivas. Desfrute de luxuosos resorts e mergulhe em uma experiência única e revigorante.</p>
+          <a href="#" class="btn btn-primary">A partir de R$4200,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destparis.png" class="card-img-top" alt="Paris">
+        <div class="card-body">
+          <h5 class="card-title">Paris, França</h5>
+          <p class="card-text">Encante-se com a Cidade das Luzes! Visite a icônica Torre Eiffel, perca-se nas charmosas ruas de Montmartre e saboreie a gastronomia francesa de renome mundial."</p>
+          <a href="#" class="btn btn-primary">A partir de R$3600,00</a>
+        </div>
+      </div>
+
+      
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destsafari.png" class="card-img-top" alt="SafariAfrica">
+        <div class="card-body">
+          <h5 class="card-title">Safári na África do Sul</h5>
+          <p class="card-text">Aventure-se em um emocionante safári pela savana africana. Observe de perto a majestosa vida selvagem e viva momentos inesquecíveis em meio à natureza.</p>
+          <a href="#" class="btn btn-primary">A partir de R$3000,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/desttoquio.png" class="card-img-top" alt="Tóquio">
+        <div class="card-body">
+          <h5 class="card-title">Tóquio, Japão</h5>
+          <p class="card-text">Explore a cultura e a modernidade de Tóquio. Descubra os contrastes entre tradições milenares e inovações tecnológicas em uma metrópole fascinante.</p>
+          <a href="#" class="btn btn-primary">A partir de R$5000,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destdubai.png" class="card-img-top" alt="Dubai">
+        <div class="card-body">
+          <h5 class="card-title">Dubai, Emirados Árabes Unidos</h5>
+          <p class="card-text">Descubra o luxo e a grandiosidade de Dubai. Conheça arranha-céus imponentes, faça compras em shoppings extravagantes e desfrute do deserto em um safári emocionante.</p>
+          <a href="#" class="btn btn-primary">A partir de R$8000,00</a>
+        </div>
+      </div>
+
+      <div class="card p-2 mb-3" style="width: 18rem;">
+        <img src="imgs/destsydney.png" class="card-img-top" alt="Sydney">
+        <div class="card-body">
+          <h5 class="card-title">Sydney, Austrália</h5>
+          <p class="card-text">Explore a beleza natural de Sydney e suas atrações icônicas. Visite a Ópera de Sydney, conheça a famosa praia de Bondi e encante-se com a cultura australiana.</p>
+          <a href="#" class="btn btn-primary">A partir de R$4600,00</a>
+        </div>
+      </div>
+    </div>
+
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
