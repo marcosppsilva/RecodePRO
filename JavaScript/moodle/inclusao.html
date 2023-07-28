@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Carregando JavaScript externo-->
+    <script src="inclusao.js"></script>
+    <!--No Header-->
+    <script>
+        /*Função criada para não executar script automaticamente, somente quando botão no fundo da página for clicado*/
+        function carregaBotaoHtml5() {
+        document.write('Texto impresso no HTML a partir de um JS na tag Script no head'+"<br>")
+        
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="inclusao.html">Voltar para Página Inicial</a></button>')
+        }
+    </script>
+</head>
+<body>
+    <div class="conteudo">
+        <h1>Tabalhando com inserção do JavaScript</h1>
+        <ol>
+            <li>No elemento</li>
+            <li>No Header</li>
+            <li>Externo</li>
+        </ol>
+    </div>
+    <!--No elemento-->
+    <input type="button" value="Clique Aqui" onclick="document.write('Texto impresso no HTML a partir de um JS inserido no próprio elemento')">
+
+    <!--Ao clicar neste botão ele carrega a função criada no script header-->
+    <button onclick="carregaBotaoHtml5()">Clique aqui novo botão html-5</button>
+
+    <!--Ao clicar neste botão ele carrega a função criada no arquivo JS externo-->
+    <button onclick="carregaBotaoPExterno()">Carregar função em JS Externo</button>
+
+</body>
+</html>
