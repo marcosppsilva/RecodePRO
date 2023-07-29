@@ -4,12 +4,12 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  header, .links, .conteudo, .card, .social, footer {
+  /*DECLARAÇÃO DE TODOS COMO FLEX*/
+  header, .links, .conteudo, .conteudopdf, .card, .social, footer {
     display: flex;
   }
 
-  /* Estilos do Header */
+  /* ESTILO DO HEADER*/
 header {
     background-color: #FFC107;
     color: #FFFFFF;
@@ -17,17 +17,19 @@ header {
     justify-content: center;
     align-items: center;
   }
+  /*ESTILO DO LOGO ONDE FICA A IMAGEM*/
   .logo {
     border-radius: 0px 0px 20px 20px;
     width: 100%;
     box-shadow: 3px 3px 3px #333333;
   }
-
+/*ESTILO DO TÍTULO DO SITE*/
 .titulo {
     padding: 10px;
     color: #333333;
     font-family: 'Fredericka the Great', cursive;
     text-shadow: 2px 1px 1px #FFFFFF;
+    text-align: center;
 }
 nav {
     padding: 10px;
@@ -38,6 +40,7 @@ nav {
  li {
     list-style: none;
  }
+ /*ESTILO DOS LINKS*/
  a {
     text-decoration: none;
     font-size: 1.2rem;
@@ -47,36 +50,38 @@ nav {
     font-weight: bold;
     font-family: 'Source Code Pro', monospace;
  }
-
+/*QUANDO MOUSE É PASSADO POR LINKS DO MENU*/
  a:hover {
     color: #333333;
     text-shadow: 2px 1px 1px #FFFFFF;
  }
   
-  /* Estilos do Main (cards) */
+  /* ESTILO DO MAIN */
   main {
     background-color: #F5F5F5;
   }
-
+/*ESTILO DA DIV ONDE FICA OS CARDS*/
   .conteudo{
     justify-content: space-around;
     width: 80%;
     background-color: #333333;
     padding: 10px;
     margin: auto;
+    flex-wrap: wrap;
   }
-
+/*ESTILO IMAGEM DOS CARDS*/
   .imgcard{
     width: 100%;
     height: 100%;
     
  }
-  
+  /*ESTILO DOS CARDS*/
   .card {
     background-color: #F5F5F5;
     color: #333333;
     padding: 3px;
     flex-direction: column;
+    margin-top: 10px;
     width: 200px;
     border: 2px solid #FFC107;
     border-radius: 10px;
@@ -85,7 +90,7 @@ nav {
   }
 
 
-
+/*ESTILO DO TEXTO DOS CARDS*/
   .descricao {
     font-family: 'Source Code Pro', monospace;
     font-weight: bold;
@@ -95,6 +100,7 @@ nav {
     text-align: justify;
     
   }
+  /*ESTILO DO BOTÃO DOS CARDS*/
   .card button {
     color: #000000;
     background-color: #FFC107;
@@ -106,14 +112,14 @@ nav {
     font-size: 1.05em;
     font-weight: bold;
   }
-
+/*ESTILO DO BOTÃO DOS CARDS QUANDO O MOUSE É PASSADO*/
   .card button:hover{
     background-color: #333333;
     color: #FFC107;
     border: 3px double #FFC107;
   }
   
-  /* Estilos do Rodapé */
+  /* ESTILOS DO RODAPÉ */
   footer {
     background-color: #FFC107;
     height: 10vh;
@@ -122,15 +128,18 @@ nav {
     align-content: center;
     padding: 20px;
 }
+/*ESPEÇAMENTO ENTRE LINKS DO FOOTER*/
 .social {
     gap: 30px;
 }
 
+/*STYLE DO DESENVOLVIDO POR NO FOOTER*/
 .desenvolvido p {
     color: white;
     font-weight: bold;
     text-shadow: 2px 1px 1px black;
 }
+/*STYLE DOS LINKS DAS REDES SOCIAIS*/
 .social a {
     gap: 20px;
     text-decoration: none;
@@ -138,6 +147,7 @@ nav {
     color: white;
     text-shadow: 1px 1px 1px black;
 }
+/*STYLE DE TODAS AS REDES SOCIAIS*/
 .insta {
     height: 50px;
     display: inline-block;
@@ -181,7 +191,7 @@ nav {
     background-position: left top;
     transition: transform 0.75s ease;
 }
-
+/*O QUE ACONTECE QUANDO PASSA O MOUSE PELAS REDES SOCIAIS*/
 .insta:hover, .linked:hover, .face:hover, .git:hover {
     transition: transform 0.75s ease;
     transform: scale(1.1); 
@@ -193,5 +203,50 @@ nav {
     background-color: #FFC107;
     border-radius: 10px;
     padding: 10px;
-    
+    text-align: center;
+
+}
+
+/*STYLE DA DIV QUE RECEBE O ARQUIVO PDF*/
+.conteudopdf{
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    background-color: #333333;
+    padding: 10px;
+    margin: auto;
+  }
+/*AQUI COMEÇA A RESPONSIVIDADE*/
+  @media screen and (max-width: 750px) {
+
+    .conteudo{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;   
+  }
+
+  .card{
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    margin-bottom: 10px;   
+}
+
+footer {
+    height: 30vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 20px;
+  }
+    .titulofooter{
+        padding-bottom: 25px;
+        
+}
+  .social {
+    flex-direction: column;
+    gap: 2px;
+}
+
 }
