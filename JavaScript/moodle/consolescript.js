@@ -39,3 +39,33 @@ function confirma(){
         document.write('<button><a style="text-decoration: none; font-weight: bold;" href="console.html">Voltar para Página Inicial</a></button>')
         }
 }
+
+function incremento(){
+    let incremento = 10;
+    document.write(incremento++);
+    document.write("<br>");
+    document.write(++incremento);
+    document.write("<br>");
+
+    document.write('<button><a style="text-decoration: none; font-weight: bold;" href="console.html">Voltar para Página Inicial</a></button>');
+}
+
+function logicos(){
+    
+    let a = 10;
+    let b = 10;
+    let c = 20;
+    let d = 30;
+
+    if (a = b && a > c) {
+        document.write("Resultado Verdadeiro")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="console.html">Voltar para Página Inicial</a></button>');
+
+    } else {
+        document.write("Resultado Falso")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="console.html">Voltar para Página Inicial</a></button>');
+    }
+
+}
