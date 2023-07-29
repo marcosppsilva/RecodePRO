@@ -197,7 +197,13 @@ nav {
     transform: scale(1.1); 
 }
 
+
+
+
+
 /*INICIO DE ESTILIZAÇÃO DA PÁGINA 2*/
+
+
 
 .faixa {
     background-color: #FFC107;
@@ -205,6 +211,14 @@ nav {
     padding: 10px;
     text-align: center;
 
+}
+
+.titulopdf {
+    padding: 10px;
+    color: #333333;
+    font-family: 'Fredericka the Great', cursive;
+    text-shadow: 2px 1px 1px #FFFFFF;
+    text-align: center;
 }
 
 /*STYLE DA DIV QUE RECEBE O ARQUIVO PDF*/
