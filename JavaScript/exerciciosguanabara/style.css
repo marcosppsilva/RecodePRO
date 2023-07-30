@@ -127,10 +127,12 @@ nav {
     align-items: center;
     align-content: center;
     padding: 20px;
+    flex-wrap: wrap;
 }
 /*ESPEÇAMENTO ENTRE LINKS DO FOOTER*/
 .social {
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 /*STYLE DO DESENVOLVIDO POR NO FOOTER*/
@@ -231,7 +233,7 @@ nav {
     margin: auto;
   }
 /*AQUI COMEÇA A RESPONSIVIDADE*/
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 650px) {
 
     .conteudo{
         flex-direction: column;
@@ -253,6 +255,7 @@ footer {
     align-items: center;
     align-content: center;
     padding: 20px;
+    flex-wrap: nowrap;
   }
     .titulofooter{
         padding-bottom: 25px;
@@ -261,6 +264,7 @@ footer {
   .social {
     flex-direction: column;
     gap: 2px;
+    flex-wrap: nowrap;
 }
 
 }

@@ -144,3 +144,73 @@ function conversorMedidas() {
     
 
 }
+
+/*EXERCÍCIO 09*/
+function conversorDolar() {
+    let valor = 0;
+    const dolar = 3.45;
+    let convertido = 0;
+    
+    
+
+    valor = Number(prompt("CONVERSOR DÓLAR \n Indique quantos reais possui"));
+    
+        convertido = valor / dolar ;
+
+        alert("CONVERSOR DÓLAR \n Você possui R$" + valor + " e com este valor consegue comprar U$" + convertido.toFixed(2));
+
+        document.write("CONVERSOR DÓLAR <br> Você possui R$" + valor + " e com este valor consegue comprar U$" + convertido.toFixed(2) + "<br>" + "<br>")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="index.html">Voltar para Página Inicial</a></button>');
+    
+
+}
+
+/*EXERCÍCIO 10*/
+function calculaTinta() {
+    let larg = 0;
+    let alt = 0;
+    let area = 0;
+    let necessario = 0;
+    
+    
+
+    alt = Number(prompt("CALCULA TINTA \n Indique o tamanho da parede em altura"));
+
+    larg = Number(prompt("CALCULA TINTA \n Indique o tamanho da parede em largura"));
+    
+    area = larg * alt;
+    necessario = area / 2;
+
+        alert("CALCULA TINTA \n O tamanho da área a ser pintada é " + area + "m2 \n Para pintar esta área será necessário " + necessario + " litros de tinta");
+
+        document.write("CALCULA TINTA <br> O tamanho da área a ser pintada é " + area + "m2 <br> Para pintar esta área será necessário " + necessario + " litros de tinta" + "<br>" + "<br>")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="index.html">Voltar para Página Inicial</a></button>');
+    
+
+}
+
+/*EXERCÍCIO 11*/
+function calculaDelta() {
+    let a = 0;
+    let b = 0;
+    let c = 0;
+    let delta = 0;
+    
+    
+
+    a = Number(prompt("CALCULA DELTA \n Informe o valor de a"));
+    b = Number(prompt("CALCULA DELTA \n Informe o valor de b"));
+    c = Number(prompt("CALCULA DELTA \n Informe o valor de c"));
+
+    delta = (b**2) - 4 * (a * c)
+
+        alert("CALCULA DELTA \n Para a = " + a + " b = " + b + " e c = " + c + "\n O valor de delta é " + delta);
+
+        document.write("CALCULA DELTA <br> Para a = " + a + " b = " + b + " e c = " + c + " <br> O valor de delta é " + delta + "<br> <br>")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="index.html">Voltar para Página Inicial</a></button>');
+    
+
+}
