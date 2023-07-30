@@ -214,3 +214,7 @@ function calculaDelta() {
     
 
 }
+
+function teste(){
+    document.write(document.getElementsByTagName('img')[3]);
+}
