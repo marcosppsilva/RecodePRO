@@ -69,3 +69,17 @@ function logicos(){
     }
 
 }
+
+function dataHora(){
+    
+    let data = new Date();
+    completa = "";
+
+    let mes = data.getMonth();
+    let dia = data.getDay();
+    let hora = data.getHours();
+    let minutos = data.getMinutes();
+
+    alert("Mês: " + mes + "\n Dia: " + dia + "\n Hora: " + hora + "\n Minutos: " + minutos)
+
+}
