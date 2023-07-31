@@ -215,6 +215,25 @@ function calculaDelta() {
 
 }
 
-function teste(){
-    document.write(document.getElementsByTagName('img')[3]);
+/*EXERCÍCIO 12*/
+function desconto5() {
+    let valor = 0;
+    let desconto = 0;
+    let final = 0;
+    
+    
+
+    valor = Number(prompt("DESCONTO 5% \n Informe o valor do produto"));
+
+    desconto = (valor * 5) / 100;
+
+    final = valor - desconto ;
+
+        alert("DESCONTO 5%  \n O valor do produto é R$" + valor + "\n O valor do desconto é R$" + desconto + "\n O valor do produto com desconto de 5% é R$" + final);
+
+        document.write("DESCONTO 5% <br> O valor do produto é R$" + valor + "<br> O valor do desconto é R$" + desconto + "<br> O valor do produto com desconto de 5% é R$" + final + "<br> <br>")
+
+        document.write('<button><a style="text-decoration: none; font-weight: bold;" href="index.html">Voltar para Página Inicial</a></button>');
+    
+
 }
