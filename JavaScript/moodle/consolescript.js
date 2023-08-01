@@ -83,3 +83,34 @@ function dataHora(){
     alert("Mês: " + mes + "\n Dia: " + dia + "\n Hora: " + hora + "\n Minutos: " + minutos)
 
 }
+
+function trabaString(){
+    let nome = "Marcos Paulo pinto da Silva";
+    document.write(nome.substring(0, 15));
+    document.write("<br>")
+    document.write(nome.split(" "));
+    let partes = document.write(nome.split(" "));
+    document.write("<br>")
+    partes.map(function(p){
+        document.write(p.toUpperCase());   
+    })
+}
+
+function FuncMatematica(){
+    let pi = 3.14131916;
+
+    document.write(Math.round(pi))
+    document.write("<br>")
+    document.write(Math.pow(2,8))
+}
+
+function jason(){
+    let nomes = {
+        nome: "Marcos",
+        idade: 33,
+        altura: 1.77,
+        peso: 77
+    };
+    document.write(nomes.nome);
+    console.log(nomes);
+}
