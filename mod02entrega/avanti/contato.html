@@ -33,16 +33,33 @@
 
     <!--div que serve como faixa divisória entre o main e o carrossel e apresenta destinos recomendados-->
     <div class="container-fluid p-2 bg-primary text-center text-white">
-        <h1 id="abaixo">TODOS OS DESTINOS</h1>
+        <h1 id="abaixo">CONTATO</h1>
     </div>
 
     <!--main onde está todo o conteúdo-->
     <main class="container-fluid p-3 w-75">
 
-        <!--div onde está todos os cards-->
+        <!--div onde está o form-->
         <div class="container-fluid row justify-content-between align-content-between">
+            
+            <form class="form-control-lg form-text p-2 container bg-primary row flex-column form-select text-white" style="height: 600px;">
+                
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome">
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+        
+                <label for="mensagem">Mensagem:</label>
+                <textarea class="textarea" id="mensagem" name="mensagem" rows="4" cols="50"></textarea>
+        
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
 
-            <!--Aqui inicia os cards, todos foram feitos com bootstrap-->
+            </form>
+
+            
+            <!-- Aqui inicia os cards, todos foram feitos com bootstrap -->
         </div>
 
 
