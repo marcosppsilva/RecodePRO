@@ -9,13 +9,25 @@ Var
    clientes: vetor[1..5] de caractere
    destinos: vetor[1..5] de caractere
    viagem: vetor[1..5, 1..2] de caractere
-   l,c,op,id, iddestino: inteiro
+   l,c,op,id, iddestino, linha: inteiro
    continuar, clientequeviaja, destinoqueviaja: caractere
 
 Inicio
    // Seção de Comandos, procedimento, funções, operadores, etc...
    //Aqui inicia o menu da aplicação solicitando o que o usuário quer fazer
+   //Variaveis preenchidas pois já fuunciona, apenas para fazer teste de viagem
 
+   clientes[1] <- "Marcos"
+   clientes[2] <- "João"
+   clientes[3] <- "Júnior"
+   clientes[4] <- "Maria"
+   clientes[5] <- "Pedro"
+
+   destinos[1] <- "Lisboa"
+   destinos[2] <- "Paris"
+   destinos[3] <- "Berlin"
+   destinos[4] <- "Porto"
+   destinos[5] <- "Salvador"
    //defino uma estrutura de repeticção em loop onde o programa será
    //executado enquanto eu quiser fazer alguma das operações
    repita
@@ -60,32 +72,32 @@ Inicio
          leia (iddestino)
          //Aqui retiro o cliente que vai viajar
          para c de 1 ate 5 faca
-              se (id = c) entao
-                 clientequeviaja <- clientes[c]
-              fimse
+            se (id = c) entao
+               clientequeviaja <- clientes[c]
+            fimse
          fimpara
-         //Aqui retiro o destino para onde ele vai ***Ainda não funciona***
+         //Aqui retiro o destino para onde ele vai
          para c de 1 ate 5 faca
-              se (iddestino = c) entao
-                 destinoqueviaja <- destinos[c]
-              fimse
+            se (iddestino = c) entao
+               destinoqueviaja <- destinos[c]
+            fimse
          fimpara
 
          para l de 1 ate 5 faca
-              para c de 1 ate 2 faca
-              se viagem[l, c] = "" entao
-                   viagem[l, c] <- clientequeviaja
-                   viagem[l, c + 1] <- destinoqueviaja
-              fimse
-              fimpara
+              se (viagem[l] = "") e (viagem[c] = "") entao
+              para c de 1 ate 1 faca
+                  viagem[l,1] <- clientequeviaja
+                  viagem[l,2] <- destinoqueviaja
+               fimpara
+            fimse
          fimpara
 
          //para l de 1 ate 5 faca
          //para c de 1 ate 2 faca
-               //se (viagem[l,c] <> " ") entao
-               //viagem[l] <- destinoqueviaja
-             //  viagem[c] <- clientequeviaja
-           //    fimse
+         //se (viagem[l,c] <> " ") entao
+         //viagem[l] <- destinoqueviaja
+         //  viagem[c] <- clientequeviaja
+         //    fimse
          //fimpara
          //fimpara
       caso 4
@@ -100,7 +112,8 @@ Inicio
          fimpara
       caso 6
          //Aqui as viagens são consultadas ***Ainda não funciona***
-         escreval ("Destino","   ","Cliente")
+         escreval ("Destino     ","   ","Cliente")
+         escreval (" ")
          para l de 1 ate 5 faca
             //escreva (l,"° Viagem: ")
             para c de 1 ate 2 faca
