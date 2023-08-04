@@ -42,7 +42,7 @@ Inicio
       escreval("3 - Para cadastrar uma viagem")
       escreval("4 - Para consultar os clientes")
       escreval("5 - Para consultar os destinos")
-      escreval("6 - Para consultar clientes e seus destinos")
+      escreval("6 - Para consultar viagens")
       escreval("                                ")
       escreval("      Aperte qualquer tecla para fechar")
       escreval("                                ")
@@ -83,6 +83,7 @@ Inicio
             fimse
          fimpara
 
+         //Aqui percorro a matriz e vejo se as celulas estao vazias, caso esteja posso adicionar elementos a viagem
          para l de 1 ate 5 faca
               se (viagem[l] = "") e (viagem[c] = "") entao
               para c de 1 ate 1 faca
@@ -92,14 +93,6 @@ Inicio
             fimse
          fimpara
 
-         //para l de 1 ate 5 faca
-         //para c de 1 ate 2 faca
-         //se (viagem[l,c] <> " ") entao
-         //viagem[l] <- destinoqueviaja
-         //  viagem[c] <- clientequeviaja
-         //    fimse
-         //fimpara
-         //fimpara
       caso 4
          //Aqui os clientes são consultados
          para c de 1 ate 5 faca
@@ -112,12 +105,13 @@ Inicio
          fimpara
       caso 6
          //Aqui as viagens são consultadas ***Ainda não funciona***
-         escreval ("Destino     ","   ","Cliente")
+         escreval ("Destino     "," ":15,"Cliente")
          escreval (" ")
          para l de 1 ate 5 faca
             //escreva (l,"° Viagem: ")
             para c de 1 ate 2 faca
                escreva(viagem[l,c])
+               escreva(" ":15)
             fimpara
             escreval()
          fimpara
