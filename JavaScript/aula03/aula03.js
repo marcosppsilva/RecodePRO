@@ -82,7 +82,9 @@ function cadastroAluno(){
         aluno.situacao = "Reprovado";
     }
 
-    alert("SITUAÇÃO DO ALUNO \n Nome: " + aluno.nome + "\n RG: " + aluno.rg + "\n Nota 1: " + aluno.nota1 + "\n Nota 2: " + aluno.nota2 + "\n Nota 3: " + aluno.nota3 + "\n Média: " + aluno.media + "\n Situação: " + aluno.situacao)
+    /*alert("SITUAÇÃO DO ALUNO \n Nome: " + aluno.nome + "\n RG: " + aluno.rg + "\n Nota 1: " + aluno.nota1 + "\n Nota 2: " + aluno.nota2 + "\n Nota 3: " + aluno.nota3 + "\n Média: " + aluno.media + "\n Situação: " + aluno.situacao)*/
+
+    alert(`SITUAÇÃO DO ALUNO \n Nome: ${aluno.nome} \n RG: ${aluno.rg} \n Nota 1: ${aluno.nota1} \n Nota 2: ${aluno.nota2} \n Nota 3: ${aluno.nota3} \n Média: ${aluno.media}\n Situação: ${aluno.situacao}`)
 
     document.write("SITUAÇÃO DO ALUNO <br> Nome: " + aluno.nome + "<br> RG: " + aluno.rg + "<br> Nota 1: " + aluno.nota1 + "<br> Nota 2: " + aluno.nota2 + "<br> Nota 3: " + aluno.nota3 + "<br> Média: " + aluno.media + "<br> Situação: " + aluno.situacao)
 
