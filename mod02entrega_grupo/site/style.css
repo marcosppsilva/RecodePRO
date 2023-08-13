@@ -1,0 +1,71 @@
+/*CSS TRABALHO EM GRUPO*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --azuldelft: #3C3875;
+    --tistle: #C8BAD1;
+    --azulfederal: #141057;
+    --cinzalegal: #9993B2;
+    --babypolder: #F7F9F1;
+    --brancopadrao: white;
+    --pretopadrao: black;
+}
+
+header, ul {
+    display: flex;
+}
+header {
+justify-content: space-between;
+height: 160px;
+background-color: var(--tistle);
+}
+.logo{
+    width: 50%;
+    height: 160px;
+    background-color: var(--azuldelft);
+    border-radius: 0px 100px 100px 0px;
+}
+
+.imglogo{
+    width: 300px;
+    border-radius: 0px 30px 30px 0px;
+    padding: 5px;
+}
+nav {
+    align-self: center;
+}
+ul{
+    gap: 30px;
+    padding: 10px;
+}
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--babypolder);
+    text-shadow: 1px 1px 1px black;
+    font-size: 1.15em;
+    padding: 5px;
+}
+a:hover{
+    transform: scale(1.2);
+    background-color: var(--azulfederal);
+    border-radius: 5px;
+}
+main {
+    height: 70vh;
+    background-color: var(--cinzalegal);
+}
+footer {
+    color: var(--babypolder);
+    height: 10vh;
+    background-color: var(--azulfederal);
+    padding: 10px;
+}
