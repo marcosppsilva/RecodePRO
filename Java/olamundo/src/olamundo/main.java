@@ -15,6 +15,11 @@ public class main {
 		for(int i = 15; i >= 0; i--) {
 			System.out.println(i + "° Numero");
 		}
+		
+		int [] vetorTeste = {2,5,7,9,8,11,85,100,25};
+		for(int i = 0; i < vetorTeste.length; i++) {
+			System.out.println(vetorTeste[i]);
+		}
 	}
 
 }
