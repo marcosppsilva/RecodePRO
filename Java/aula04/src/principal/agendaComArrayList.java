@@ -16,10 +16,10 @@ public class agendaComArrayList {
 		nomes.add("Fabiano");
 		nomes.add("Patricia");
 		nomes.add("Maria de Lourdes");
-		nomes.add("Aylén Arancibia");
+		nomes.add("João Costa");
 		nomes.add("Jorge");
 		
-		telefone.add("999457635");
+		telefone.add("935113477");
 		telefone.add("999457635");
 		telefone.add("999457635");
 		telefone.add("999457635");
@@ -59,8 +59,8 @@ public class agendaComArrayList {
 		case 3: {
 			System.out.println("====================TODOS OS CONTATOS====================");
 			System.out.println("Nome" + "Telefone");
-			for(String nome : nomes) {
-				System.out.println(nomes.indexOf(nome + 1) + nome);
+			for(int i = 0; i < nomes.size(); i++) {
+				System.out.println((i+1) + " - " + nomes.get(i));
 			}
 			break;
 		}
