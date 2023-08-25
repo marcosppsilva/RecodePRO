@@ -34,6 +34,7 @@ public class agendaComArrayList {
 		System.out.println("4 - PESQUISAR UM NOME");
 		
 		int op = teclado.nextInt();
+		
 		String continuar = "";
 		
 		switch(op) {
