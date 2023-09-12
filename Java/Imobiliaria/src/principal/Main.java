@@ -7,7 +7,35 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Calendar calendario = Calendar.getInstance();
+		
+		int valor1, valor2, contapar;
+		
+		valor1 = 2;
+		valor2 = 5;
+		contapar = 0;
+		
+		for(int i = valor2; i >= valor1; i--) {
+			if(i % 2 == 0) {
+				contapar++;
+			}
+		}
+		System.out.println(contapar);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*Calendar calendario = Calendar.getInstance();
 		calendario.set(2028, Calendar.SEPTEMBER, 10);
 		Date vencimento01 = calendario.getTime();
 		calendario.set(2026, Calendar.FEBRUARY, 12);
@@ -65,7 +93,7 @@ public class Main {
 		System.out.println("Vencimento: " + contrato03.getData_vencimento());
 		System.out.println("================================================");
 		
-
+*/
 	}
 
 }
