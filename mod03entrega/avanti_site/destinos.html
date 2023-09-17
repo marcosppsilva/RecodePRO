@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Chamada CSS do Bootstrap-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!--Chamada CSS do Próprio Site-->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Avanti Turismo - Página Inicial</title>
+</head>
+
+<body style="background-image: url(imgs/bg/praia3.png); background-size: cover;">
+
+    <!--Definição de cabeçalho, logo e barra de navegação-->
+    <header style="background-image: url(imgs/bg/bgitaly1413h.png); background-size: cover;">
+
+        <div class="logo"><img class="logo" src="imgs/logo.png" alt=""></div>
+
+        <nav class="navbar bg-primary p-3" data-bs-theme="dark">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="promocoes.html">Promoções</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--div que serve como faixa divisória entre o main e o carrossel e apresenta destinos recomendados-->
+    <div class="container-fluid p-2 bg-primary text-center text-white">
+        <h1 id="abaixo">TODOS OS DESTINOS</h1>
+    </div>
+
+    <!--main onde está todo o conteúdo-->
+    <main class="container-fluid p-3 w-75">
+
+        <!--div onde está todos os cards-->
+        <div class="container-fluid row justify-content-between align-content-between">
+            
+            <!--Aqui inicia outros cards, feitos com bootstrap-->
+            <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destpatagonia.png" class="img-fluid rounded-start" alt="Patagônia, Argentina">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Patagônia, Argentina</h5>
+                      <p class="card-text">A Patagônia é um paraíso para os amantes da natureza, com suas paisagens deslumbrantes e vastas extensões de geleiras. No inverno, é possível fazer caminhadas em trilhas deslumbrantes e avistar a vida selvagem única da região.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destsantorini.png" class="img-fluid rounded-start" alt="Santorini, Grécia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Santorini, Grécia</h5>
+                      <p class="card-text">Conhecida por suas impressionantes casas brancas com cúpulas azuis, Santorini é uma ilha paradisíaca no Mar Egeu. Aprecie o pôr do sol sobre as águas cintilantes, explore as encantadoras vilas à beira-mar e experimente a deliciosa gastronomia grega.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destcidadedocabo.png" class="img-fluid rounded-start" alt="Cidade do Cabo, África do Sul">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Cidade do Cabo, África do Sul</h5>
+                      <p class="card-text">A Cidade do Cabo é uma cidade vibrante e diversificada, famosa por suas belas praias, vinícolas premiadas, a icônica Table Mountain e uma rica história cultural. Explore paisagens impressionantes, desfrute da culinária local e mergulhe na rica herança desta cidade sul-africana.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destInterlaken.png" class="img-fluid rounded-start" alt="Interlaken, Suíça">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Interlaken, Suíça</h5>
+                      <p class="card-text">Situada entre dois lagos deslumbrantes e cercada por montanhas, Interlaken é o paraíso suíço para atividades ao ar livre no verão. Aproveite para praticar parapente, escalada, trilhas e passeios de barco, enquanto desfruta das paisagens deslumbrantes.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destsapporo.png" class="img-fluid rounded-start" alt="Sapporo, Japão">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Sapporo, Japão</h5>
+                      <p class="card-text">Sapporo é famosa por seu festival de inverno, o Sapporo Snow Festival, que atrai visitantes de todo o mundo. Explore as esculturas de gelo e neve, experimente a culinária local e desfrute de uma experiência única no inverno japonês.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destanchorage.png" class="img-fluid rounded-start" alt="Anchorage, Alasca, EUA">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Anchorage, Alasca, EUA</h5>
+                      <p class="card-text">Descubra a beleza selvagem do Alasca durante o inverno em Anchorage. Aventure-se em trilhas nevadas, faça passeios de trenó com cães huskies e encante-se com as luzes dançantes da aurora boreal.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destquebec.png" class="img-fluid rounded-start" alt="Quebec, Canadá">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Quebec, Canadá</h5>
+                      <p class="card-text">Visite Quebec durante o inverno e mergulhe na atmosfera europeia desta charmosa cidade canadense. Passeie pelas ruas de paralelepípedos do bairro antigo e desfrute de atividades de inverno, como esqui e snowboard.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destsmoritz.png" class="img-fluid rounded-start" alt="St. Moritz, Suíça">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">St. Moritz, Suíça</h5>
+                      <p class="card-text">Conhecido por seu luxo e esportes de inverno, St. Moritz é um destino de esqui de classe mundial. Desfrute de paisagens deslumbrantes, esportes emocionantes e uma experiência sofisticada nas montanhas suíças.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destcusco.png" class="img-fluid rounded-start" alt="Cusco, Peru">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Cusco, Peru</h5>
+                      <p class="card-text">Localizada nas montanhas dos Andes, Cusco é uma cidade peruana com uma rica herança histórica dos incas. Explore as ruínas de Machu Picchu, mergulhe na cultura local e desfrute da maravilhosa culinária peruana.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destlaponia.png" class="img-fluid rounded-start" alt="Lapônia, Finlândia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Lapônia, Finlândia</h5>
+                      <p class="card-text">Explore a mágica Lapônia no inverno, onde é possível vivenciar experiências únicas, como passeios de trenó puxados por renas, safáris com huskies e a chance de avistar a deslumbrante aurora boreal.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destpequim.png" class="img-fluid rounded-start" alt="Pequim">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Pequim, China</h5>
+                      <p class="card-text">Descrição: Pequim é uma cidade repleta de história e maravilhas arquitetônicas, incluindo a Grande Muralha, a Cidade Proibida e o Templo do Céu. Descubra a rica cultura chinesa e experimente a culinária local diversificada.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/desttoronto.png" class="img-fluid rounded-start" alt="Toronto">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Toronto, Canadá</h5>
+                      <p class="card-text">Toronto é uma cidade vibrante e multicultural, com uma mistura única de modernidade e história. Visite a icônica Torre CN para ter uma vista panorâmica deslumbrante da cidade. Explore seus diversos bairros, como o Distillery District e Kensington Market, repletos de arte, cultura e gastronomia. Descubra a hospitalidade calorosa dos canadenses e desfrute de eventos culturais e festivais que ocorrem ao longo do ano.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destbangok.png" class="img-fluid rounded-start" alt="Bangkok">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Bangkok, Tailândia</h5>
+                      <p class="card-text">Bangkok é uma metrópole agitada, famosa por seus templos deslumbrantes, mercados flutuantes e vida noturna animada. Experimente a rica culinária tailandesa e visite o magnífico Palácio Real.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destamster.png" class="img-fluid rounded-start" alt="Amsterdã, Holanda">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Amsterdã, Holanda</h5>
+                      <p class="card-text">Amsterdã é conhecida pelos seus canais pitorescos, arquitetura histórica e atmosfera animada. Visite os museus, como o Museu Van Gogh, e explore a cultura única de bicicletas e cafés.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destlondres.png" class="img-fluid rounded-start" alt="Londres">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Londres, Reino Unido</h5>
+                      <p class="card-text">Londres é uma cidade rica em história e cultura, com marcos icônicos como o Palácio de Buckingham, o Big Ben e a London Eye. Explore os museus de classe mundial e os famosos mercados londrinos.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destrio.png" class="img-fluid rounded-start" alt="Rio de Janeiro">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Rio de Janeiro, Brasil</h5>
+                      <p class="card-text">Conhecida por suas praias deslumbrantes e paisagens deslumbrantes, o Rio de Janeiro oferece uma mistura única de praia, montanha e cultura. Visite o Cristo Redentor, explore o Pão de Açúcar e experimente a animada vida noturna da cidade.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destbarcelona.png" class="img-fluid rounded-start" alt="Barcelona">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Barcelona, Espanha</h5>
+                      <p class="card-text">Barcelona é uma cidade vibrante com arquitetura única de Antoni Gaudí, incluindo a icônica Sagrada Família. Passeie pelas Ramblas, desfrute da deliciosa culinária espanhola e relaxe nas belas praias.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destnewy.png" class="img-fluid rounded-start" alt="Nova Iorque">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Nova Iorque, Estados Unidos</h5>
+                      <p class="card-text">A "Grande Maçã" é uma cidade que nunca dorme, repleta de arranha-céus icônicos, teatros da Broadway, museus de renome mundial e uma incrível diversidade cultural.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destitalia.png" class="img-fluid rounded-start" alt="Veneza Italia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Veneza, Itália</h5>
+                      <p class="card-text">Conhecida como a "Cidade das Águas", Veneza é famosa por seus canais pitorescos e arquitetura renascentista. Explore as românticas gôndolas, visite a Praça de São Marcos e desfrute da autêntica gastronomia italiana.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destsydney.png" class="img-fluid rounded-start" alt="Roma Italia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Sydney, Austrália</h5>
+                      <p class="card-text">Explore a beleza natural de Sydney e suas atrações icônicas. Visite a Ópera de Sydney, conheça a famosa praia de Bondi e encante-se com a cultura australiana.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destdubai.png" class="img-fluid rounded-start" alt="Roma Italia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Dubai, Emirados Árabes Unidos</h5>
+                      <p class="card-text">Descubra o luxo e a grandiosidade de Dubai. Conheça arranha-céus imponentes, faça compras em shoppings extravagantes e desfrute do deserto em um safári emocionante.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/desttoquio.png" class="img-fluid rounded-start" alt="Tóquio">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Tóquio, Japão</h5>
+                      <p class="card-text">Explore a cultura e a modernidade de Tóquio. Descubra os contrastes entre tradições milenares e inovações tecnológicas em uma metrópole fascinante.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destsafari.png" class="img-fluid rounded-start" alt="Roma Italia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Safári na África do Sul</h5>
+                      <p class="card-text">Aventure-se em um emocionante safári pela savana africana. Observe de perto a majestosa vida selvagem e viva momentos inesquecíveis em meio à natureza.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destparis.png" class="img-fluid rounded-start" alt="Paris">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Paris, França</h5>
+                      <p class="card-text">Encante-se com a Cidade das Luzes! Visite a icônica Torre Eiffel, perca-se nas charmosas ruas de Montmartre e saboreie a gastronomia francesa de renome mundial.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/cruzeiro01.png" class="img-fluid rounded-start" alt="Maldivas">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Ilhas Maldivas</h5>
+                      <p class="card-text">Relaxe em praias paradisíacas e águas cristalinas nas Ilhas Maldivas. Desfrute de luxuosos resorts e mergulhe em uma experiência única e revigorante.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card p-2 mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/cards/destbali.png" class="img-fluid rounded-start" alt="Bali">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Bali, Indonésia</h5>
+                      <p class="card-text">Bali é um paraíso tropical conhecido por suas praias deslumbrantes, templos exóticos e cultura rica. Explore as paisagens exuberantes, participe de cerimônias tradicionais e relaxe em resorts luxuosos.</p>
+                      <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+
+    </main>
+
+
+    <!--Início de Rodapé-->
+    <footer class="modal-footer p-2 bg-primary justify-content-between text-white">
+        <p>RECODE PRO 2023</p>
+        <p>Desenvolvido por Marcos Paulo</p>
+    </footer>
+
+    <!--Carregamento de script do bootstrap-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+    </script>
+</body>
+
+</html>
