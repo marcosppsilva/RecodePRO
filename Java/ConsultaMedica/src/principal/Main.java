@@ -1,8 +1,12 @@
 package principal;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import principal.DAO.ConsultaDAO;
 import principal.DAO.MedicoDAO;
 import principal.DAO.PacienteDAO;
 
@@ -19,6 +23,8 @@ public class Main {
 		Medico medico1 = new Medico();
 		PacienteDAO pacienteDAO = new PacienteDAO();
 		Paciente paciente01 = new Paciente();
+		ConsultaDAO consultaDAO = new ConsultaDAO();
+		Consulta consulta1 = new Consulta();
 				
 		do {			
 			System.out.println("=========================================");
@@ -32,8 +38,10 @@ public class Main {
 			System.out.println("7 - Para Editar Pacientes");
 			System.out.println("8 - Para Consultar Pacientes");
 			System.out.println("9 - Para Cadastrar Consultas");
-			System.out.println("10 - Para Excluir Consultas");
-			System.out.println("11 - Para Consultar Consultas");		
+			System.out.println("10 - Para Buscar Consultas");
+			System.out.println("11 - Para Atualizar Consultas");
+			System.out.println("12 - Para Excluir Consultas");
+			System.out.println("13 - Para Sair");
 			System.out.println("=========================================");
 			System.out.println("Indique uma opção");
 			
@@ -187,6 +195,109 @@ public class Main {
 					}
 				} break;
 				
+			case 9: {
+				System.out.println("CADASTRANDO CONSULTA");				
+				System.out.println("ID do Medico: ");
+				
+				int medicoId = teclado.nextInt();
+				teclado.nextLine();
+
+				Medico medicoConsulta = medicoDAO.buscarMedicoPorId(medicoId);
+				if (medicoConsulta != null) {
+					
+					consulta1.setMedico(medicoConsulta);
+					System.out.println("ID do Paciente: ");
+					int pacienteId = teclado.nextInt();
+					teclado.nextLine();
+
+					Paciente pacienteConsulta = pacienteDAO.buscarPacientePorId(pacienteId);
+
+					if (pacienteConsulta != null) {
+
+						consulta1.setPaciente(pacienteConsulta);
+						System.out.print("Data da Consulta (dd/mm/yyyy): ");
+						String dataString = teclado.next();
+
+						try {
+							
+							SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+							Date dataConsulta = sdf.parse(dataString);
+							consulta1.setDataConsulta(dataConsulta);
+							consultaDAO.criarConsulta(consulta1);
+							System.out.println("Consulta cadastrada com sucesso!");
+
+						} catch (ParseException e) {
+							System.out.println("Formato de data inválido. Use dd/mm/yyyy.");
+						}
+
+					} else {
+						System.out.println("Paciente não encontrado.");
+					}
+
+				} else {
+					System.out.println("Medico não encontrado.");
+				}				
+			} break;
+			
+			case 10:
+            	// Listar Consultas
+                List<Consulta> consultas = consultaDAO.listarConsultas();
+                System.out.println("Lista de Consultas:");
+                for (Consulta c : consultas) {
+                    System.out.println("ID: " + c.getId() +
+                            ", Medico: " + c.getMedico().getNome() +
+                            ", Paciente: " + c.getPaciente().getNome() +
+                            ", Data: " + c.getDataConsulta());
+                }
+                break;
+                
+			case 11:
+            	// Atualizar Consulta
+                System.out.print("ID da Consulta para atualização: ");
+                int consultaId = teclado.nextInt();
+                Consulta consultaAtualizar = consultaDAO.buscarConsulta(consultaId);
+                if (consultaAtualizar != null) {
+                    System.out.print("Nova Data da Consulta (dd/mm/yyyy): ");
+                    String novaDataString = teclado.next();
+                    try {
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                        Date novaDataConsulta = sdf.parse(novaDataString);
+                        consultaAtualizar.setDataConsulta(novaDataConsulta);
+                        consultaDAO.atualizarConsulta(consultaAtualizar);
+                        System.out.println("Consulta atualizada com sucesso!");
+                    } catch (ParseException e) {
+                        System.out.println("Formato de data inválido. Use dd/mm/yyyy.");
+                    }
+                } else {
+                    System.out.println("Consulta não encontrada.");
+                }
+                break;
+                
+                
+			case 12:
+            	// Excluir Consulta
+                System.out.print("ID da Consulta para exclusão: ");
+                int consultaIdExcluir = teclado.nextInt();
+                Consulta consultaExcluir = consultaDAO.buscarConsulta(consultaIdExcluir);
+                if (consultaExcluir != null) {
+                    consultaDAO.excluirConsulta(consultaIdExcluir);
+                    System.out.println("Consulta excluída com sucesso!");
+                } else {
+                    System.out.println("Consulta não encontrada.");
+                }
+                break;
+                
+			case 13:
+                // Sair
+                System.out.println("Saindo do sistema...");
+                consultaDAO.fecharConexao();
+                pacienteDAO.fecharConexao();
+                medicoDAO.fecharConexao();
+                teclado.close();
+                System.exit(0);
+            default:
+                System.out.println("Opção inválida. Tente novamente.");
+                break;
 			}
 			
 			
