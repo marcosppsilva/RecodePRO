@@ -17,11 +17,9 @@ public class Main {
 		//Criando MedicoDAO e Medico
 		MedicoDAO medicoDAO = new MedicoDAO();
 		Medico medico1 = new Medico();
-		
-		//Criando PacienteDAO e Paciente
-		PacienteDAO pacienteDAO = new PacienteDAO();		
+		PacienteDAO pacienteDAO = new PacienteDAO();
 		Paciente paciente01 = new Paciente();
-		
+				
 		do {			
 			System.out.println("=========================================");
 			System.out.println("Clinica Médica POO");
@@ -59,16 +57,14 @@ public class Main {
 				//Chama o metodo DAO para inserir as informações no banco de dados
 				medicoDAO.criarMedico(medico1);
 				
-			}
-			break;
+			} break;
 			
 			case 2:{
 				System.out.println("EXCLUINDO MÉDICO");
 				System.out.println("Informe o ID do Médico que pretende excluir");
 				medicoDAO.excluirMedico(teclado.nextInt());
 				
-			}
-			break;
+			} break;
 			
 			case 3: {
 				int edit = 0;
@@ -102,8 +98,7 @@ public class Main {
 				medicoDAO.atualizarMedico(mdatualizar);
 				}
 								
-				}
-				break;
+				} break;
 			
 			case 4: {
 				System.out.println("CONSULTANDO MÉDICOS");
@@ -118,8 +113,30 @@ public class Main {
 					for (Medico medico : medicos) {
 						System.out.println("MD-ID " + medico.getId() + ": " + medico.getNome() + " - " + medico.getEspecialidade());
 					}
-				}
-				break;
+				} break;
+				
+			case 5: {
+				System.out.println("ADICIONANDO PACIENTE");
+				
+				//Recebe informações para serem inseridas no Sistema
+				System.out.println("Informe o nome do Paciente:");				
+				paciente01.setNome(teclado.nextLine());
+				
+				System.out.println("Informe a Idade do Paciente:");
+				paciente01.setIdade(teclado.nextInt());
+				teclado.nextLine();
+				
+				//Chama o metodo DAO para inserir as informações no banco de dados
+				pacienteDAO.criarPaciente(paciente01);
+				
+			} break;
+			
+			case 6:{
+				System.out.println("EXCLUINDO PACIENTE");
+				System.out.println("Informe o ID do Paciente que pretende excluir");
+				pacienteDAO.excluirPaciente(teclado.nextInt());
+				
+			} break;
 				
 			case 7: {
 				int edit = 0;
@@ -152,10 +169,23 @@ public class Main {
 					pcatualizar.setIdade(novaIdade);
 				
 				pacienteDAO.atualizarPaciente(pcatualizar);
-				}
-								
-				}
-				break;
+				}								
+			} break;
+			
+			case 8: {
+				System.out.println("CONSULTANDO PACIENTES");
+					
+				List<Paciente> pacientes = null;
+					try {	
+						pacientes = pacienteDAO.listarPacientes();
+						} catch (Exception e) {
+					e.printStackTrace();
+						}
+	
+					for (Paciente paciente : pacientes) {
+						System.out.println("PACIENTE-ID " + paciente.getId() + ": " + paciente.getNome() + " - " + paciente.getIdade());
+					}
+				} break;
 				
 			}
 			
