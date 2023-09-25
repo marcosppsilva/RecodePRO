@@ -52,3 +52,78 @@
   background-color: #282c3480;
   box-shadow: #282c3480 2px 2px 2px;
 }
+
+.aula2509{
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+.aula2509 > h1, h2 {
+  color: aqua;
+  text-shadow: white 1px 3px 3px;
+  text-align: center;
+}
+
+
+.input2509{
+  width: 200px;
+  height: 50px;
+}
+
+.camponum, .moedas {
+  width: 100px;
+  text-align: center;
+  height: fit-content;
+  padding: 10px;
+  background-color: burlywood;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+.btnpadrao{
+  margin: 5px;
+  padding: 5px;
+  background-color: coral;
+  font-weight: bold;
+  text-shadow: white 1px 1px 1px;
+  border-radius: 10px;
+}
+
+.btnpadrao:hover {
+  background-color: rgba(255, 127, 80, 0.5);
+}
+
+.cardModel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+  background-color: antiquewhite;
+  width: 300px;
+}
+
+.cardModel > p{
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: justify;
+  border-bottom: solid black 2px;
+}
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: silver;
+  gap: 10px;
+}

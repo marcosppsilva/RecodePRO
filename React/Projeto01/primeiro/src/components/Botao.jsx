@@ -1,7 +1,9 @@
-export function Botao(){
+import '../App.css';
+
+export function Botao(props){
     return(
         <>
-            <button>Salvar</button>
+            <button className="btnpadrao" style={{backgroundColor: props.cor}} onClick={props.onClick}>{props.nome}</button>
         </>
     )
 }
