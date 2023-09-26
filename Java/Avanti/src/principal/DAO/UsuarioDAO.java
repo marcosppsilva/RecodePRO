@@ -11,21 +11,16 @@ import principal.Usuario;
 
 public class UsuarioDAO {
 	
-	private Connection conexao;
-	 
+	private Connection conexao;	 
 
     public UsuarioDAO() {
-
         try {
 
             conexao = Conexao.conectar();
-
         } catch (SQLException e) {
 
             e.printStackTrace();
-
         }
-
     }
     
     public void cadastrarUsuario(Usuario usuario) {
@@ -51,6 +46,8 @@ public class UsuarioDAO {
             stmt.setString(8, usuario.getTipo());
 
             stmt.executeUpdate();
+            
+            System.out.println("Informação Inserida com Sucesso");
 
         } catch (SQLException e) {
 
@@ -136,6 +133,8 @@ public class UsuarioDAO {
                 usuario.setTelefone(resultado.getString("telefone"));                
                 usuario.setEmail(resultado.getString("email"));                
                 usuario.setEndereco(resultado.getString("endereco"));
+                usuario.setSenha(resultado.getString("senha"));
+                usuario.setTipo(resultado.getString("tipo"));
                 
                 return usuario;
             }
@@ -143,6 +142,58 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    public void editarUsuario(Usuario Usuario) {
+
+        String sql = "UPDATE usuario SET cpf = ?, idade = ?, email = ?, nome = ?, telefone = ?, endereco = ?, senha = ?, tipo = ? WHERE id_usuario = ?";
+
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+
+            stmt.setString(1, Usuario.getCpf());
+
+            stmt.setInt(2, Usuario.getIdade());
+
+            stmt.setString(3, Usuario.getEmail());
+            
+            stmt.setString(4, Usuario.getNome());
+            
+            stmt.setString(5, Usuario.getTelefone());
+            
+            stmt.setString(6, Usuario.getEndereco());
+            
+            stmt.setString(7, Usuario.getSenha());
+            
+            stmt.setString(8, Usuario.getTipo());
+            
+            stmt.setInt(9, Usuario.getId_usuario());
+
+            stmt.executeUpdate();
+            
+            System.out.println("Informação Atualizada com Sucesso");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+    
+    public void fecharConexao() {
+
+        try {
+
+            if (conexao != null && !conexao.isClosed()) {
+
+                conexao.close();
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
     }
 
 }
