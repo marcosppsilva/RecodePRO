@@ -1,0 +1,22 @@
+[
+    {
+      "titulo": "Aprenda Programação",
+      "texto": "Descubra o fascinante mundo da programação e desenvolvimento de software.",
+      "foto": "../assets/code.png"
+    },
+    {
+      "titulo": "Novas Tecnologias",
+      "texto": "Explore as mais recentes tecnologias e frameworks de programação.",
+      "foto": "../assets/code.png"
+    },
+    {
+      "titulo": "Carreira em TI",
+      "texto": "Saiba como construir uma carreira de sucesso na área de Tecnologia da Informação.",
+      "foto": "../assets/code.png"
+    },
+    {
+      "titulo": "Projetos de Software",
+      "texto": "Aprenda a criar projetos de software robustos e escaláveis.",
+      "foto": "../assets/code.png" 
+    }
+  ]

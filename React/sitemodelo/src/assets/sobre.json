@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Nosso Projeto",
+    "texto": "Conheça nosso projeto fictício de cursos de informática e tecnologia.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Missão e Valores",
+    "texto": "Saiba mais sobre nossa missão de capacitar pessoas na área de informática.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Equipe dedicada",
+    "texto": "Conheça nossa equipe dedicada e experiente na área de tecnologia.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Parceiros",
+    "texto": "Saiba mais sobre nossas parcerias com instituições de ensino e empresas de tecnologia.",
+    "foto": "../assets/code.png"
+  }
+  ]

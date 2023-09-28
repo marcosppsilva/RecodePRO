@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Cursos de Programação",
+    "texto": "Encontre cursos online e presenciais para aprimorar suas habilidades de programação.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Certificações",
+    "texto": "Prepare-se para certificações reconhecidas na indústria de TI.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Aulas Práticas",
+    "texto": "Participe de aulas práticas com projetos do mundo real.",
+    "foto": "../assets/code.png"
+  },
+  {
+    "titulo": "Mentoria Especializada",
+    "texto": "Receba orientação personalizada de especialistas em programação.",
+    "foto": "../assets/code.png"
+  }  
+]

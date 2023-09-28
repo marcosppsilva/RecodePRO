@@ -1,0 +1,11 @@
+/*AULA ENSINANDO A USAR O REACT ROUTER
+
+npm install react-router-dom  //Comando para instalar o React Router que tem que ser executado na pasta do próprio projeto
+
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';   //Importação que deve ser feita na App principal
+
+*/
+
+.App {
+  text-align: center;
+}
