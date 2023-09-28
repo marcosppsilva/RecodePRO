@@ -8,7 +8,7 @@ import java.util.List;
 
 import principal.Conexao;
 import principal.Destino;
-import principal.Usuario;
+
 
 
 public class DestinoDAO {

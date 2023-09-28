@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Conexao {
 	
-	private static final String URL = "jdbc:mysql://localhost:3306/avanti2";
+	private static final String URL = "jdbc:mysql://localhost:3306/avantibd";
 
 	private static final String USUARIO = "root";
 

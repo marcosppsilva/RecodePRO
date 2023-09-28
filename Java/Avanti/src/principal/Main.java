@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import principal.DAO.DestinoDAO;
+import principal.DAO.EstadiaDAO;
 import principal.DAO.UsuarioDAO;
 
 public class Main {
@@ -20,6 +21,8 @@ public class Main {
 		Usuario usuario = new Usuario();
 		DestinoDAO destinodao = new DestinoDAO();
 		Destino destino = new Destino();
+		EstadiaDAO estadiadao = new EstadiaDAO();
+		Estadia estadia = new Estadia();
 		
 		do {			
 			System.out.println("=========================================");
@@ -375,34 +378,194 @@ public class Main {
 					switch(opcao) { 
 						case 1: {
 						
+							System.out.println("CADASTRANDO ESTADIA");
 							
+							//Recebe informações para serem inseridas no Sistema
+							System.out.println("Nome Estadia:");				
+							estadia.setNome_estadia(teclado.nextLine());
+							
+							System.out.println("Tipo da Estadia:");				
+							estadia.setTipo(teclado.nextLine());
+							
+							System.out.println("Endereço:");				
+							estadia.setEndereco(teclado.nextLine());
+							
+							System.out.println("Telefone:");				
+							estadia.setTelefone(teclado.nextLine());
+							
+							System.out.println("Email:");				
+							estadia.setEmail(teclado.nextLine());
+							
+							
+							
+							Double preco = 0.0;							
+							System.out.println("Valor(Dia): R$");
+							
+							String input = teclado.next();
+							
+							preco = Double.parseDouble(input);
+							estadia.setValor(preco);
+							
+							
+							//Chama o metodo DAO para inserir as informações no banco de dados
+							estadiadao.cadastrarEstadia(estadia);
 							
 						}break;
 						
 						case 2: {
 						
-							
+							System.out.println("EXCLUINDO ESTADIA");
+							System.out.println("ID ESTADIA:");
+							estadiadao.excluirEstadia(teclado.nextInt());
 							
 						}break;
 						
 						case 3: {
 						
+							int edit = 0;							
+							String novoNome = "";
+							String novoTipo = "";
+							String novoEndereco = "";
+							String novoTelefone = "";
+							String novoEmail = "";
+							Double novoValor = 0.0;
 							
+							System.out.println("EDITANDO ESTADIA");
+							System.out.println("ID Estadia:");
+							edit = teclado.nextInt();
+							teclado.nextLine();
+							
+							Estadia estEditar = estadiadao.verEstadiaId(edit);
+														
+							if(estEditar !=null) {
+									
+									System.out.println("Editar Nome da Estadia (Deixar em branco caso não queira alterar)");
+										novoNome = teclado.nextLine();
+									if (novoNome.equals("")) {
+										novoNome = estEditar.getNome_estadia();
+										}
+										estEditar.setNome_estadia(novoNome);
+										
+										System.out.println("Editar Tipo (Deixar em branco caso não queira alterar)");
+										novoTipo = teclado.nextLine();
+									if (novoTipo.equals("")) {
+										novoTipo = estEditar.getTipo();
+										}
+										estEditar.setTipo(novoTipo);	
+										
+										System.out.println("Editar Endereço (Deixar em branco caso não queira alterar)");
+										novoEndereco = teclado.nextLine();
+									if (novoEndereco.equals("")) {
+										novoEndereco = estEditar.getEndereco();
+										}
+										estEditar.setEndereco(novoEndereco);	
+										
+										System.out.println("Editar Telefone (Deixar em branco caso não queira alterar)");
+										novoTelefone = teclado.nextLine();
+									if (novoTelefone.equals("")) {
+										novoTelefone = estEditar.getTelefone();
+										}
+										estEditar.setTelefone(novoTelefone);	
+										
+										System.out.println("Editar Email (Deixar em branco caso não queira alterar)");
+										novoEmail = teclado.nextLine();
+									if (novoEmail.equals("")) {
+										novoEmail = estEditar.getEmail();
+										}
+										estEditar.setEmail(novoEmail);	
+										
+										System.out.println("Editar Valor (Digite 0.0 caso não queira alterar)");
+										String input = teclado.next();																											
+										novoValor = Double.parseDouble(input);
+										
+									if (novoValor == 0) {
+										novoValor = estEditar.getValor();
+										}										
+										estEditar.setValor(novoValor);
+										
+										estadiadao.editarEstadia(estEditar);					
+								}
 							
 						}break;
 						
 						case 4: {
 	
+							System.out.println("LISTA DE ESTADIAS:");
+							List<Estadia> estadias = null;
+							try {
+
+								estadias = estadiadao.listarEstadia();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							int index = 1;
+							for (Estadia estadiaitem : estadias) {
+								System.out.println("===================== ESTADIA "+index+" ====================== \n"+"ID Estadia:" + estadiaitem.getId_estadia() + "\n" + "Nome Estadia: " + estadiaitem.getNome_estadia() + "\n" + "Tipo: " + estadiaitem.getTipo() + "\n" + "Endereço: " + estadiaitem.getEndereco() + "\n" + "Telefone: " + estadiaitem.getTelefone() + "\n" + "Email: " + estadiaitem.getEmail() + "\n" + "Valor: R$ " + estadiaitem.getValor());
+								index++;
+							}
 	
-	
+						}break;
+						
+						case 5: {
+							
+							System.out.println("VER ESTADIA");
+							System.out.println("ID da Estadia pretendida");
+							Estadia estadiaitem = estadiadao.verEstadiaId(teclado.nextInt());  
+							teclado.nextLine();
+							
+							System.out.println("================================== ESTADIA INDIVIDUAL DO BD ================================= \n" + "ID Estadia:" + estadiaitem.getId_estadia() + "\n" + "Nome Estadia: " + estadiaitem.getNome_estadia() + "\n" + "Tipo: " + estadiaitem.getTipo() + "\n" + "Endereço: " + estadiaitem.getEndereco() + "\n" + "Telefone: " + estadiaitem.getTelefone() + "\n" + "Email: " + estadiaitem.getEmail() + "\n" + "Valor: R$ " + estadiaitem.getValor());
+							
 						}break;
 					}
 				
 			}break;
 			
-			case 4: {
+			case 4: {	
+				System.out.println("=========================================");
+				System.out.println("1 - Para Cadastrar Viagem");
+				System.out.println("2 - Para Excluir Viagem");
+				System.out.println("3 - Para Editar Viagem");
+				System.out.println("4 - Para Consultar Viagens");
+				System.out.println("5 - Para Ver Viagem");
+				System.out.println("6 - Para Sair");
+				System.out.println("=========================================");
+				System.out.println("Indique uma opção");
+			
+			opcao = teclado.nextInt();
+			teclado.nextLine();
+			
+				switch(opcao) { 
+				
+						case 1: {
 				
 				
+				
+						}break;
+						
+						case 2: {
+							
+							
+							
+						}break;
+						
+						case 3: {
+							
+							
+							
+						}break;
+						
+						case 4: {
+							
+							
+							
+						}break;
+						
+						case 5: {
+							
+							
+							
+						}break;
+				}
 				
 			}break;
 					
