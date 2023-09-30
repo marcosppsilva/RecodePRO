@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import principal.Conexao;
-import principal.Destino;
 import principal.Estadia;
 
 public class EstadiaDAO {

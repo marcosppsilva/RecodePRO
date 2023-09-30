@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    
+    <h1>Cadastro de Produto</h1>		
+
+		<form action="relatorio.jsp" method="post">
+			<fieldset>
+				<legend>Dados do Produto</legend>	
+				<p><label for="nome">Descrição:</label>
+				<input type="text" id="nome" name="descricao"></p>
+
+				<p><label for="idade">Valor:</label>
+				<input type="number" id="idade" name="valor"></p>			
+
+				<p><label for="peso">Estoque:</label>
+				<input type="text" id="peso" name="estoque"></p>			
+
+				<p>Tipo:
+
+				<input type="radio" name="tipo" value="perecíveis ">
+				<label for="canina">Perecível </label>
+
+				<input type="radio" name="tipo" value="Nao_perecíveis ">
+				<label for="felina">Não Perecível</label></p>		
+
+				<p><input type="submit" value="Cadastrar Produto">
+			</fieldset>
+		</form>
+
+    <form action="exibecalc.jsp" method="post">
+        <h1>Calculadora Básica</h1>
+        <fieldset>
+            <legend>Dados para calcular</legend>	
+            <p><label for="valor1">Valor 1:</label>
+            <input type="number" id="valor1" name="valor1"></p>
+
+            <p><label for="valor2">Valor 2:</label>
+            <input type="number" id="valor2" name="valor2"></p>			
+
+            <fieldset>
+                <legend>Operações:</legend>
+
+                <input type="radio" name="calculo" value="adicao">
+                <label for="adicao">Adição</label>
+
+                <input type="radio" name="calculo" value="subtracao">
+                <label for="subtracao">Subtração</label>
+
+                <input type="radio" name="calculo" value="divisao">
+                <label for="divisao">Divisão</label>
+
+                <input type="radio" name="calculo" value="multiplicacao">
+                <label for="multiplicacao">multiplicação</label>
+            </fieldset>
+            <br>
+            <input type="submit" value="Calcular">
+        </fieldset>
+
+    </form>
+
+</body>
+</html>
