@@ -8,15 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import principal.Conexao;
-import principal.Viagem;
 import principal.Viagem_Viajante;
 
 public class Viagem_ViajanteDAO {
 
 	private Connection conexao;
 	ViagemDAO viagemdao = new ViagemDAO();
-	ViajanteDAO viajantedao = new ViajanteDAO();
-	
+	UsuarioDAO usuariodao = new UsuarioDAO();
 
     public Viagem_ViajanteDAO() {
         try {
@@ -28,11 +26,11 @@ public class Viagem_ViajanteDAO {
     }
 	
     public void criarViagemViajante(Viagem_Viajante viagem_viajante) {
-        String sql = "INSERT INTO viagem_viajante (id_viagem, id_jante,) VALUES (?, ?)";
+        String sql = "INSERT INTO viagemviajante (id_viagem, id_usuario) VALUES (?, ?)";
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
         	stmt.setInt(1, viagem_viajante.getViagem().getId_viagem());
-        	stmt.setInt(2, viagem_viajante.getViajante().getId_viajante());
+        	stmt.setInt(2, viagem_viajante.getUsuario().getId_usuario());
         	
             stmt.executeUpdate();
 
@@ -62,7 +60,7 @@ public class Viagem_ViajanteDAO {
                 
                 viagemViajante.setId_viagem_viajante(resultado.getInt("id_viagem_viajante"));
                 viagemViajante.setViagem(viagemdao.buscarViagemId(resultado.getInt("id_viagem")));
-                viagemViajante.setViajante(viajantedao.verViajanteId(resultado.getInt("id_viajante")));
+                viagemViajante.setUsuario(usuariodao.verUsuarioId(resultado.getInt("id_usuario")));
                                              
             	viagemViajantes.add(viagemViajante);
             }
@@ -83,7 +81,7 @@ public class Viagem_ViajanteDAO {
             	
             	viagemViajante.setId_viagem_viajante(resultado.getInt("id_viagem_viajante"));
             	viagemViajante.setViagem(viagemdao.buscarViagemId(resultado.getInt("id_viagem")));
-                viagemViajante.setViajante(viajantedao.verViajanteId(resultado.getInt("id_viajante")));
+            	viagemViajante.setUsuario(usuariodao.verUsuarioId(resultado.getInt("id_usuario")));
             	
             }
         } catch (SQLException e) {

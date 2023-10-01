@@ -5,13 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import principal.Conexao;
-import principal.Destino;
-import principal.Estadia;
-import principal.Usuario;
 import principal.Viagem;
 
 public class ViagemDAO {
@@ -30,10 +26,12 @@ public class ViagemDAO {
     }
     
     
-    public void criarViagem(Viagem viagem) {
-        String sql = "INSERT INTO viagem (data, tipo, duracao, viajantes, valor_viagem, usuario, destino, estadia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-
+    public long criarViagem(Viagem viagem) {
+        String sql = "INSERT INTO viagem (data, tipo, duracao, viajantes, valor_viagem, id_usuario, id_destino, id_estadia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        
+        try (PreparedStatement stmt = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+        	        	
         	stmt.setTimestamp(1, new java.sql.Timestamp(viagem.getData().getTime()));
         	stmt.setString(2, viagem.getTipo());
         	stmt.setInt(3, viagem.getDuracao());
@@ -41,13 +39,27 @@ public class ViagemDAO {
         	stmt.setDouble(5, viagem.getValor_viagem());
         	stmt.setInt(6, viagem.getUsuario().getId_usuario());
         	stmt.setInt(7, viagem.getDestino().getId_destino());
-        	stmt.setInt(8, viagem.getEstadia().getId_estadia());        	
+        	
+        	if(viagem.getEstadia() != null) {
+        		
+        		stmt.setInt(8, viagem.getEstadia().getId_estadia()); 
+        	} else {
+        		
+        		stmt.setNull(8, java.sql.Types.INTEGER);
+        	}
         	
             stmt.executeUpdate();
-
+            
+            ResultSet pegaid = stmt.getGeneratedKeys();
+            if(pegaid.next()){
+            	return (pegaid.getLong(1));
+            }
+                                  
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
+        return 0;
     }
     
     public void excluirViagem(int id) {
@@ -117,6 +129,20 @@ public class ViagemDAO {
             
         	stmt.setTimestamp(1, new java.sql.Timestamp(viagem.getData().getTime()));
         	stmt.setInt(2, viagem.getId_viagem());
+        	
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void editarValorViagem(Viagem viagem) {
+        String sql = "UPDATE viagem SET valor_viagem = ?, viajantes = ? WHERE id_viagem = ?";
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            
+        	stmt.setDouble(1, viagem.getValor_viagem());
+        	stmt.setInt(2, viagem.getViajantes());
+        	stmt.setInt(3, viagem.getId_viagem());
         	
             stmt.executeUpdate();
         } catch (SQLException e) {

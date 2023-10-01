@@ -4,17 +4,17 @@ public class Viagem_Viajante {
 	
 	private int id_viagem_viajante;
 	private Viagem viagem;
-	private Viajante viajante;
+	private Usuario usuario;
 	
 	public Viagem_Viajante() {
 		
 	}
 
-	public Viagem_Viajante(int id_viagem_viajante, Viagem viagem, Viajante viajante) {
+	public Viagem_Viajante(int id_viagem_viajante, Viagem viagem, Usuario usuario) {
 		super();
 		this.id_viagem_viajante = id_viagem_viajante;
 		this.viagem = viagem;
-		this.viajante = viajante;
+		this.usuario = usuario;
 	}
 	
 	
@@ -36,12 +36,12 @@ public class Viagem_Viajante {
 		this.viagem = viagem;
 	}
 
-	public Viajante getViajante() {
-		return viajante;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setViajante(Viajante viajante) {
-		this.viajante = viajante;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}	
 			
 }

@@ -24,11 +24,11 @@ public class UsuarioDAO {
         }
     }
     
-    public void cadastrarUsuario(Usuario usuario) {
+    public long cadastrarUsuario(Usuario usuario) {
 
         String sql = "INSERT INTO usuario (cpf, idade, email, nome, telefone, endereco, senha, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             stmt.setString(1, usuario.getCpf());
 
@@ -48,6 +48,11 @@ public class UsuarioDAO {
 
             stmt.executeUpdate();
             
+            ResultSet pegaid = stmt.getGeneratedKeys();
+            if(pegaid.next()){
+            	return (pegaid.getLong(1));
+            }
+            
             System.out.println("Informação Inserida com Sucesso");
 
         } catch (SQLException e) {
@@ -55,6 +60,8 @@ public class UsuarioDAO {
             e.printStackTrace();
 
         }
+        
+        return 0;
 
     }
     

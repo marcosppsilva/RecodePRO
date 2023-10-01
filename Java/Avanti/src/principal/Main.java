@@ -1,11 +1,18 @@
 package principal;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 
 import principal.DAO.DestinoDAO;
 import principal.DAO.EstadiaDAO;
 import principal.DAO.UsuarioDAO;
+import principal.DAO.ViagemDAO;
+import principal.DAO.Viagem_ViajanteDAO;
+import principal.DAO.ViajanteDAO;
 
 public class Main {
 
@@ -23,6 +30,13 @@ public class Main {
 		Destino destino = new Destino();
 		EstadiaDAO estadiadao = new EstadiaDAO();
 		Estadia estadia = new Estadia();
+		ViagemDAO viagemdao = new ViagemDAO();
+		Viagem viagem = new Viagem();
+		ViajanteDAO viajantedao = new ViajanteDAO();
+		Viajante viajante = new Viajante();
+		Viagem_ViajanteDAO viagemViajantedao = new Viagem_ViajanteDAO();
+		Viagem_Viajante viagemViajante = new Viagem_Viajante();
+		
 		
 		do {			
 			System.out.println("=========================================");
@@ -523,8 +537,8 @@ public class Main {
 			case 4: {	
 				System.out.println("=========================================");
 				System.out.println("1 - Para Cadastrar Viagem");
-				System.out.println("2 - Para Excluir Viagem");
-				System.out.println("3 - Para Editar Viagem");
+				System.out.println("2 - Para Editar Viagem");
+				System.out.println("3 - Para Consultar Viagem");
 				System.out.println("4 - Para Consultar Viagens");
 				System.out.println("5 - Para Ver Viagem");
 				System.out.println("6 - Para Sair");
@@ -537,8 +551,173 @@ public class Main {
 				switch(opcao) { 
 				
 						case 1: {
-				
-				
+							String pretende = new String();
+							int numViajantes = 0;
+							System.out.println("CADASTRANDO VIAGEM");				
+							System.out.println("ID do Cliente: ");
+							
+							int idcliente = teclado.nextInt();
+							teclado.nextLine();
+
+							Usuario clienteViagem = usuariodao.verUsuarioId(idcliente);
+							
+							//System.out.println(clienteViagem.getCpf());
+									
+							if (clienteViagem != null) {
+								
+								System.out.print("Data da Viagem (dd/mm/yyyy): ");
+								String dataString = teclado.next();
+								teclado.nextLine();
+								
+								try {
+									
+									SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+									Date dataViagem = sdf.parse(dataString);
+									
+									viagem.setData(dataViagem);
+									
+									//consulta1.setDataConsulta(dataConsulta);
+									//consultaDAO.criarConsulta(consulta1);
+									//System.out.println("Consulta cadastrada com sucesso!");
+
+								} catch (ParseException e) {
+									System.out.println("Formato de data inválido. Use dd/mm/yyyy.");
+								}
+								
+								System.out.println("Tipo:");
+								viagem.setTipo(teclado.nextLine());
+											
+								System.out.println("Duração (dias):");
+								int diasViagem = teclado.nextInt();
+								teclado.nextLine();
+								viagem.setDuracao(diasViagem);
+								
+								
+								viagem.setViajantes(1);
+								
+								///NÃO ESQUECER DE FAZER O VALOR ANTES DE FINALIZAR
+								
+								viagem.setUsuario(clienteViagem);
+								
+								System.out.println("ID do Destino: ");
+								int destinoId = teclado.nextInt();
+								teclado.nextLine();
+								
+								Destino destinoViagem = destinodao.verDestinoId(destinoId);
+																
+								if (destinoViagem != null) {
+
+								viagem.setDestino(destinoViagem);
+
+								System.out.println("Pretende Estadia? (s/n)");
+								pretende = teclado.nextLine();
+								
+								if(pretende.equals("s")) {
+																		
+									System.out.println("ID Estadia: ");
+									int estadiaId = teclado.nextInt();
+									teclado.nextLine();
+									
+									Estadia estadiaViagem = estadiadao.verEstadiaId(estadiaId); 
+																										
+									if (estadiaViagem != null) {
+
+										viagem.setEstadia(estadiaViagem);
+										
+										viagem.setValor_viagem((estadiaViagem.getValor() * diasViagem) + destinoViagem.getValor());
+
+									}else {
+										System.out.println("Estadia não encontrado.");
+									}									
+									
+								}else {
+										viagem.setEstadia(null);
+										viagem.setValor_viagem(destinoViagem.getValor());
+									}
+								
+								} else {
+									System.out.println("Destino não encontrado.");
+								}
+								
+								
+								long pegaidviagem = viagemdao.criarViagem(viagem);
+								
+								if(pegaidviagem != 0) {
+									Viagem verviagem = viagemdao.buscarViagemId(Math.toIntExact(pegaidviagem));
+											
+									viagemViajante.setUsuario(clienteViagem);									
+									viagemViajante.setViagem(verviagem);
+									viagemViajantedao.criarViagemViajante(viagemViajante);
+								}								
+								System.out.println("Viagem cadastrada com sucesso!");
+								
+								System.out.println("Pretende adicionar viajantes? (s/n)");
+								pretende = teclado.nextLine();
+								
+								if(pretende.equals("s")) {
+								
+									System.out.println("Indique o num de viajantes");
+									numViajantes = teclado.nextInt();
+									teclado.nextLine();
+									
+									for (int i = 1; i <= numViajantes; i++){
+										
+								        String tipo = "viajante";
+								        Usuario novoUsuario = new Usuario();
+
+										System.out.println("CADASTRANDO VIAJANTE");
+
+								        // Recebe informações relevantes para o cadastro de viajante
+								        System.out.println("CPF:");
+								        novoUsuario.setCpf(teclado.nextLine());
+
+								        System.out.println("Nome:");
+								        novoUsuario.setNome(teclado.nextLine());
+
+								        System.out.println("Idade:");
+								        novoUsuario.setIdade(teclado.nextInt());
+								        teclado.nextLine();
+
+								        System.out.println("Email:");
+								        novoUsuario.setEmail(teclado.nextLine());
+
+								        System.out.println("Telefone:");
+								        novoUsuario.setTelefone(teclado.nextLine());
+
+								        novoUsuario.setTipo(tipo);
+
+								        // Chama o método DAO para inserir as informações no banco de dados
+								        usuariodao.cadastrarUsuario(novoUsuario);
+								        
+								        Viagem verviagem = viagemdao.buscarViagemId(Math.toIntExact(pegaidviagem));
+								        viagemViajante.setViagem(verviagem);
+								        
+								        long pegaidusuario = usuariodao.cadastrarUsuario(novoUsuario); 								        		
+										
+										if(pegaidusuario != 0) {
+											Usuario verusuario = usuariodao.verUsuarioId(Math.toIntExact(pegaidusuario));
+																							
+											viagemViajante.setUsuario(verusuario);
+											viagemViajantedao.criarViagemViajante(viagemViajante);
+											System.out.println("Viajante cadastrado com sucesso!");
+										}								
+										System.out.println("Viagem cadastrada com sucesso!");
+									}
+									
+									numViajantes = numViajantes + 1;
+									Viagem editarValorViagem = viagemdao.buscarViagemId(Math.toIntExact(pegaidviagem));
+									Double valorAtual = editarValorViagem.getValor_viagem() * numViajantes;
+									
+									editarValorViagem.setValor_viagem(valorAtual);
+									editarValorViagem.setViajantes(numViajantes);
+									
+									viagemdao.editarValorViagem(editarValorViagem);
+									
+								}
+
+							} else {
+								System.out.println("Cliente não encontrado.");
+							}
 				
 						}break;
 						
