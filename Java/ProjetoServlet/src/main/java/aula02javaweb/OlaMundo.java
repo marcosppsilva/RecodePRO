@@ -34,7 +34,7 @@ public class OlaMundo extends HttpServlet {
 			out.println(" </head>");
 			out.println(" <body>");
 			out.println(" <h1>Olá Mundo Servlet</h1>");
-			out.println(" <h2>Olá em nível 2</h2>");
+			out.println(" <h2 style=\"color:blue;text-align:center; padding: 5px; background-color: yellow; border-radius: 10px\">Olá em nível 2</h2>");
 			out.println(" </body>");
 			out.println("</html>");
 
