@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá Mundo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+        }
+
+        .caixa{
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 3px 2px white;
+        }
+
+        .ola{
+            text-shadow: 1px 1px 1px black;
+            color: white;
+        }
+        
+        header{
+			width: 97vh;
+			margin-bottom: 10px;
+			display: flex;
+			justify-content: space-between;
+		}
+		nav{
+			width: 20%;
+			display: flex;
+			justify-content: space-between;
+		}
+		a{
+			text-decoration: none;
+			font-size: 1.5em;
+			color: ghostwhite;
+		}
+		a:hover{
+			color: gray;
+			text-shadow: 1px 1px 1px white;
+			text-decoration: underline gray;
+		}
+    </style>
+</head>
+<body>
+	<header>
+		<img src="/src/main/resources/static/img/logo200.png">
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Meio</a>
+            <a href="#">Fim</a>
+        </nav>
+	</header>
+    <div class="caixa">
+        <h1 class="ola">Olá Mundo</h1>
+    </div>
+</body>
+</html>

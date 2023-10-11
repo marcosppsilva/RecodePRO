@@ -595,8 +595,6 @@ public class Main {
 								
 								viagem.setViajantes(1);
 								
-								///NÃO ESQUECER DE FAZER O VALOR ANTES DE FINALIZAR
-								
 								viagem.setUsuario(clienteViagem);
 								
 								System.out.println("ID do Destino: ");
@@ -722,14 +720,51 @@ public class Main {
 						}break;
 						
 						case 2: {
+													
+							int edit = 0;							
 							
+							System.out.println("EDITANDO VIAGEM");
+							System.out.println("ID VIAGEM:");
+							edit = teclado.nextInt();
+							teclado.nextLine();
 							
+							Viagem vgEditar = viagemdao.buscarViagemId(edit);
+														
+							if(vgEditar !=null) {
+								
+									System.out.println("Editando Viagem " + vgEditar.getId_viagem());
+									System.out.println("Editando Viagem " + vgEditar.getUsuario().getNome());
+									System.out.println("Editando Viagem " + vgEditar.getUsuario().getCpf());
+									
+									System.out.println("DEIXAR EM BRANCO CASO NÃO QUEIRA ALTERAR");
+									
+									System.out.print("Alterar Data da Viagem (dd/mm/yyyy): ");
+									String dataString = teclado.next();
+									teclado.nextLine();
+									
+									try {
+										
+										SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+										Date dataViagem = sdf.parse(dataString);
+										
+										vgEditar.setData(dataViagem);
+
+									} catch (ParseException e) {
+										System.out.println("Formato de data inválido. Use dd/mm/yyyy.");
+									}										
+										viagemdao.editarViagem(vgEditar);					
+							}
 							
 						}break;
 						
 						case 3: {
 							
+							System.out.println("VER VIAGEM");
+							System.out.println("ID da Viagem pretendida");
+							Viagem viagemitem = viagemdao.buscarViagemId(teclado.nextInt());							 
+							teclado.nextLine();
 							
+							System.out.println("================================== VIAGEM DO BD ================================= \n" + "ID Viagem:" + viagemitem.getId_viagem()  + "\n" + "País: " + viagemitem.getDestino().getPais() + "\n" + "Destino: " + viagemitem.getDestino().getCidade() + "\n" + "Estadia: " + /*(viagemitem.getEstadia().getNome_estadia() == null ? "Não Há" : viagemitem.getEstadia().getNome_estadia())   Resolver situação em que não há estadia*/ viagemitem.getEstadia().getNome_estadia().chars() + "\n" + "Data: " + viagemitem.getData() + "\n" + "Duração (dias) " + viagemitem.getDuracao() + "\n" + "Viajantes: " + viagemitem.getViajantes() + "\n" + "Valor: R$ " + viagemitem.getValor_viagem());
 							
 						}break;
 						
