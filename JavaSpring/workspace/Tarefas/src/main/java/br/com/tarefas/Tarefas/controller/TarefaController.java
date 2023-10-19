@@ -22,6 +22,12 @@ public class TarefaController {
 		dados.add(new Tarefa(2, "Fazer Almoço"));
 		dados.add(new Tarefa(3, "Fazer Faxina"));
 		dados.add(new Tarefa(4, "Ir ao Cinema"));
+		dados.add(new Tarefa(5, "Fazer janta"));
+		dados.add(new Tarefa(6, "Jantar"));
+		dados.add(new Tarefa(7, "Ver Série"));
+		dados.add(new Tarefa(8, "Arrumar Quarto"));
+		dados.add(new Tarefa(9, "Tomar Remédio"));
+		dados.add(new Tarefa(10, "Deitar e Dormir"));
 		
 		model.addAttribute("x", dados);
 		
