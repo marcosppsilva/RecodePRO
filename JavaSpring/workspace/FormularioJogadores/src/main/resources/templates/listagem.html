@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores</title>
+
+</head>
+<body>
+    <div class="tabela">
+    <h1>Jogadores Convocados</h1>
+    <table>
+		<thead>
+			Lista de Jogadores
+		</thead>
+		<tr>
+			<th>Nome Jogador</th>
+			<th>Número</th>	
+		</tr>
+		
+		<tbody>
+			<tr th:each="Jogador : ${jogadores}" class="linhas">
+				<td th:text="${Jogador.nome}"></td>
+				<td th:text="${Jogador.numeroJogador}" class="numeros"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="/cadastro">Voltar para o cadastro</a>
+	</div>
+    
+</body>
+</html>

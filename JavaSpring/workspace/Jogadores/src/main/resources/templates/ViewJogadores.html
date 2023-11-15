@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores</title>
+
+	<style>
+		.tabela {
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 60%;
+		}
+		table {
+			border: 1px solid black;
+			padding: 5px;
+		}
+		th {
+			background-color: darkgray;
+			border: 1px solid black;
+		}
+		.linhas {
+			padding: 1px;
+		}
+		td {
+			padding: 3px;
+		}
+		.numeros {
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+    <div class="tabela">
+    <h1>Jogadores Convocados</h1>
+    <table>
+		<thead>
+			Lista de Jogadores
+		</thead>
+		<tr>
+			<th>Nome Jogador</th>
+			<th>Número</th>	
+		</tr>
+		
+		<tbody>
+			<tr th:each="Jogador : ${listados}" class="linhas">
+				<td th:text="${Jogador.nome}"></td>
+				<td th:text="${Jogador.numeroJogador}" class="numeros"></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+    
+</body>
+</html>
