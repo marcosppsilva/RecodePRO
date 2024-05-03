@@ -13,7 +13,7 @@ public class Inicio {
 		tipo = "adm";
 		
 		String nomeComparacao = "Marcos";
-		String senhaComparacao = "1995";
+		String senhaComparacao = "1990";
 		String tipoComparacao = "adm";
 		
 		if(nome.equals(nomeComparacao) && senha.equals(senhaComparacao)) {
